@@ -1,0 +1,56 @@
+[project]
+name = "ecolovim"
+version = "0.1.0"
+description = "ECOLOVIM LFP analysis pipeline (VIM-DBS, essential tremor)"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+
+dependencies = [
+    "numpy>=2.4",
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "mne",
+    "fooof>=1.1",
+    "statsmodels>=0.14.6",
+    "plotly>=6.6",
+    "joblib",
+    "openpyxl",          # pandas backend for the .xlsx inputs/outputs
+]
+
+# A collection of scripts run from the repository root, not an importable
+# package: installing the project only installs its dependencies.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
+py-modules = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13",
+]
+
+# ── ruff ──────────────────────────────────────────────────────────────────────
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"

@@ -1,0 +1,25 @@
+# Data and generated outputs — never committed. Recreate with:
+#   python make_synthetic_data.py && python run_all.py
+Results/
+
+# Raw or clinical data files
+*.mat
+*.json
+*.xlsx
+*.csv
+*.zip
+
+# Python
+__pycache__/
+*.py[co]
+.venv/
+*.egg-info/
+build/
+.ruff_cache/
+
+# Editors / OS / local tools
+.DS_Store
+.vscode/
+.idea/
+*.swp
+.claude/
